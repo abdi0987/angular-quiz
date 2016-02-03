@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="UTF-8">
+    <title>Angular-quiz by abdi0987</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="stylesheets/normalize.css" media="screen">
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="stylesheets/github-light.css" media="screen">
+  </head>
+  <body>
+    <section class="page-header">
+      <h1 class="project-name">Angular-quiz</h1>
+      <h2 class="project-tagline"></h2>
+      <a href="https://github.com/abdi0987/angular-quiz" class="btn">View on GitHub</a>
+      <a href="https://github.com/abdi0987/angular-quiz/zipball/master" class="btn">Download .zip</a>
+      <a href="https://github.com/abdi0987/angular-quiz/tarball/master" class="btn">Download .tar.gz</a>
+    </section>
+
+    <section class="main-content">
+      <h1>
+<a id="welcome-to-angular-quiz" class="anchor" href="#welcome-to-angular-quiz" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Welcome To Angular-Quiz</h1>
+
+<p>Angular quiz is a fun quiz for your users on your sites fully built using html,css,and javascript.</p>
+
+<hr>
+
+<h2>
+<a id="file-structure" class="anchor" href="#file-structure" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>File Structure</h2>
+
+<p><i></i>(Main Dir)</p>
+
+<ul>
+<li>
+<i></i> angular-quiz
+
+<ul>
+<li>
+<i></i>angular-quiz.js</li>
+<li>
+<i></i>angular-quiz.css</li>
+<li>
+<i></i>quiz.tmpl.html</li>
+</ul>
+</li>
+<li>
+<i></i> index.html</li>
+<li>
+<i></i> app.js</li>
+<li>
+<i></i> package.json</li>
+</ul>
+
+<hr>
+
+<h2>
+<a id="setup" class="anchor" href="#setup" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Setup</h2>
+
+<p>Before you do anything you need to install the dependencies. To do that run npm install in your terminal.</p>
+
+<p>Angular Quiz requires bootstrap and angular so you need to include them in your index file.</p>
+
+<p>No in your javascript file you need to include angular-quiz module and set it up. </p>
+
+<div class="highlight highlight-source-js"><pre><span class="pl-k">var</span> app <span class="pl-k">=</span> <span class="pl-en">angular</span>(<span class="pl-s"><span class="pl-pds">'</span>app<span class="pl-pds">'</span></span>,[<span class="pl-s"><span class="pl-pds">'</span>angular-quiz<span class="pl-pds">'</span></span>])</pre></div>
+
+<hr>
+
+<h2>
+<a id="run" class="anchor" href="#run" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Run</h2>
+
+<p>In the run method you need to requires the $quizConfig service</p>
+
+<div class="highlight highlight-source-js"><pre><span class="pl-smi">app</span>.<span class="pl-en">run</span>(<span class="pl-k">function</span>(<span class="pl-smi">$quizConfig</span>){
+
+})</pre></div>
+
+<p>and then call the setup method giving it an object.</p>
+
+<p>for example.</p>
+
+<div class="highlight highlight-source-js"><pre><span class="pl-smi">app</span>.<span class="pl-en">run</span>(<span class="pl-k">function</span>(<span class="pl-smi">$quizConfig</span>){
+    <span class="pl-smi">$quizConfig</span>.<span class="pl-en">setup</span>({
+        questions <span class="pl-k">:</span> [
+            {
+                text<span class="pl-k">:</span><span class="pl-s"><span class="pl-pds">"</span>Who invented the internet<span class="pl-pds">"</span></span>,
+                answers<span class="pl-k">:</span>[<span class="pl-s"><span class="pl-pds">"</span>Al Gore!!!!<span class="pl-pds">"</span></span>,<span class="pl-s"><span class="pl-pds">"</span>Tim Burners Lee<span class="pl-pds">"</span></span>,<span class="pl-s"><span class="pl-pds">"</span>Larry Page<span class="pl-pds">"</span></span>,<span class="pl-s"><span class="pl-pds">"</span>Mark Zuckerberg<span class="pl-pds">"</span></span>],
+                correct<span class="pl-k">:</span><span class="pl-c1">1</span>
+            },
+            {
+                text<span class="pl-k">:</span><span class="pl-s"><span class="pl-pds">"</span>Who invented JavaScript<span class="pl-pds">"</span></span>,
+                answers<span class="pl-k">:</span>[<span class="pl-s"><span class="pl-pds">"</span>Brendan Eich<span class="pl-pds">"</span></span>,<span class="pl-s"><span class="pl-pds">"</span>Whats Javascript<span class="pl-pds">"</span></span>,<span class="pl-s"><span class="pl-pds">"</span>Again Larry Page<span class="pl-pds">"</span></span>],
+                correct<span class="pl-k">:</span><span class="pl-c1">0</span>
+            },
+            {
+                text<span class="pl-k">:</span><span class="pl-s"><span class="pl-pds">"</span>What does HTML stand for<span class="pl-pds">"</span></span>,
+                answers<span class="pl-k">:</span>[<span class="pl-s"><span class="pl-pds">"</span>HyperText Markup Language,<span class="pl-pds">"</span></span>,<span class="pl-s"><span class="pl-pds">"</span>Hipster Target Man Language<span class="pl-pds">"</span></span>,<span class="pl-s"><span class="pl-pds">"</span>IDK<span class="pl-pds">"</span></span>,<span class="pl-s"><span class="pl-pds">"</span>HYPE!!<span class="pl-pds">"</span></span>],
+                correct<span class="pl-k">:</span><span class="pl-c1">0</span>
+            },
+            {
+                text<span class="pl-k">:</span><span class="pl-s"><span class="pl-pds">"</span>What company created angularjs<span class="pl-pds">"</span></span>,
+                answers<span class="pl-k">:</span>[<span class="pl-s"><span class="pl-pds">'</span>FaceBook<span class="pl-pds">'</span></span>,<span class="pl-s"><span class="pl-pds">"</span>Google<span class="pl-pds">"</span></span>,<span class="pl-s"><span class="pl-pds">'</span>Microsoft<span class="pl-pds">'</span></span>,<span class="pl-s"><span class="pl-pds">'</span>Twitter<span class="pl-pds">'</span></span>,<span class="pl-s"><span class="pl-pds">'</span>Apple<span class="pl-pds">'</span></span>,<span class="pl-s"><span class="pl-pds">'</span>Dropbox<span class="pl-pds">'</span></span>,<span class="pl-s"><span class="pl-pds">'</span>Spotify<span class="pl-pds">'</span></span>],
+                correct<span class="pl-k">:</span><span class="pl-c1">1</span>
+            }
+        ],
+        prevAllowed<span class="pl-k">:</span><span class="pl-c1">true</span>
+    })
+})
+
+</pre></div>
+
+<p>The setup object should have a questions property which accepts an array of questions object. the prevAllow is optional its defaulted to true basically mean the user can go back to previous questions that they answered.</p>
+
+<div class="highlight highlight-source-js"><pre><span class="pl-smi">app</span>.<span class="pl-en">run</span>(<span class="pl-k">function</span>(<span class="pl-smi">$quizConfig</span>){
+    <span class="pl-smi">$quizConfig</span>.<span class="pl-en">setup</span>({
+        questions<span class="pl-k">:</span>[
+                        {
+                            text<span class="pl-k">:</span><span class="pl-s"><span class="pl-pds">"</span>Who invented the internet<span class="pl-pds">"</span></span>,
+                            answers<span class="pl-k">:</span>[<span class="pl-s"><span class="pl-pds">"</span>Al Gore!!!!<span class="pl-pds">"</span></span>,<span class="pl-s"><span class="pl-pds">"</span>Tim Burners Lee<span class="pl-pds">"</span></span>,<span class="pl-s"><span class="pl-pds">"</span>Larry Page<span class="pl-pds">"</span></span>,<span class="pl-s"><span class="pl-pds">"</span>Mark Zuckerberg<span class="pl-pds">"</span></span>],
+                            correct<span class="pl-k">:</span><span class="pl-c1">1</span>
+                        },
+                  ],
+                  prevAllowed<span class="pl-k">:</span><span class="pl-c1">false</span>
+        }
+})</pre></div>
+
+<p>And thats it angular-quiz should appear.</p>
+
+      <footer class="site-footer">
+        <span class="site-footer-owner"><a href="https://github.com/abdi0987/angular-quiz">Angular-quiz</a> is maintained by <a href="https://github.com/abdi0987">abdi0987</a>.</span>
+
+        <span class="site-footer-credits">This page was generated by <a href="https://pages.github.com">GitHub Pages</a> using the <a href="https://github.com/jasonlong/cayman-theme">Cayman theme</a> by <a href="https://twitter.com/jasonlong">Jason Long</a>.</span>
+      </footer>
+
+    </section>
+
+  
+  </body>
+</html>
